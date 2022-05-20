@@ -1,0 +1,21 @@
+@use './mixin.scss' as mixin;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&family=Roboto+Mono&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+body{
+    background-color: mixin.$grey;
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 20px;
+        @include mixin.tablet{
+            grid-template-columns: 1fr;
+            gap: 1em;
+        }
+    }
+}

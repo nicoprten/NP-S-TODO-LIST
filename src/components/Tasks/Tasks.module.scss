@@ -1,0 +1,42 @@
+@use './../../styles/mixin.scss' as mixin;
+
+.containerTasks{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    max-height: 30em;
+    overflow: auto;
+    scrollbar-color: red;
+    .containerTask{
+        display: flex;
+        background-color: mixin.$red;
+        margin-bottom: 5px;
+        justify-content: space-between;
+        border-radius: 0 0.5em 1em 0;
+        p{
+            padding: .5em;
+            width: 80%;
+        }
+        .complete{
+            text-decoration: line-through;
+            color: mixin.$grey;
+        }
+        .containerButtons{
+            display: flex;
+            button{
+                background-color: mixin.$white;
+                border: none;
+                padding: .5em;
+                height: 100%;
+                &:nth-child(2){
+                    border-radius: 0 0.5em 1em 0;
+                }
+                &:hover{
+                    cursor: pointer;
+                    background-color: mixin.$lightred;
+                    transition: .2s;
+                }
+            }
+        }
+    }
+}

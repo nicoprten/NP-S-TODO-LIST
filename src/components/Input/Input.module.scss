@@ -1,0 +1,55 @@
+@use './../../styles/mixin.scss' as mixin;
+
+.containerInput{
+    background-color: mixin.$red;
+    padding: .5em;
+    height: 7em;
+    margin-right: 10px;
+    @include mixin.tablet{
+        margin: 0;
+    }
+    h1{
+        text-align: center;
+    }
+    form{
+        display: flex;
+        justify-content: center;
+        input, button{
+            font-size: 1.1em;
+            padding: .5em;
+            background-color: mixin.$white;
+
+        }
+        input{
+            width: 60%;
+            border: none;
+            outline: none;
+            &:focus{
+                border: mixin.$lightred;
+                transition: .2s;
+            }
+        }
+        button{
+            background-color: mixin.$grey;
+            color: white;
+            width: 20%;
+            &:hover{
+                cursor: pointer;
+                // font-size: 1em;
+                width: 25%;
+                background-color: lighten(mixin.$grey, 5%);
+                transition: .2s;
+            }
+        }
+        select{
+            font-size: 1.1em;
+            text-align: center;
+            width: 20%;
+            background-color: mixin.$white;
+            &:focus{
+                outline: mixin.$lightred;
+                border: mixin.$lightred;
+            }
+        }
+    }
+}
