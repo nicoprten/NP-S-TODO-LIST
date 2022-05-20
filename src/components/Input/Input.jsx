@@ -1,19 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Tasks from './../Tasks/Tasks';
 import styles from './Input.module.scss';
 
 export default function Input(){
     const [task, setTask] = useState('');
-    const [tasks, setTasks] = useState([]);
     const [showTask, setShowTask] = useState('');
-    const [id, setId] = useState(0);
+    
+    // LocalStorage
+    const [tasks, setTasks] = useState(getLocalStorage());
+    function getLocalStorage(){
+        const localTasks = JSON.parse(localStorage.getItem('tasks'));
+        // console.log(localTasks)
+        if(localTasks){
+            return localTasks;
+        }else{
+            return [];
+        }
+    }
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        console.log(tasks)
+    }, [tasks])
 
     function addTask(e, task){
         e.preventDefault();
         if(task.length > 2){
             const taskCapitalize = task.charAt(0).toUpperCase() + task.slice(1);
+            let id = task[Math.floor(Math.random() * task.length)] + Math.floor(Math.random() * (task.length * 5));
             setTasks([...tasks, {id, task: taskCapitalize, complete: false}]);
-            setId(id + 1);
             setTask('');
         }
     }

@@ -1,9 +1,10 @@
 import {RadioButtonUnchecked, RadioButtonChecked, Delete} from '@mui/icons-material';
+import { useEffect } from 'react';
 import styles from './Tasks.module.scss';
 
 export default function Tasks({tasks, deleteTask, toggleTask, showTask}){
-    console.log(tasks)
     let taskFilter = [];
+    
     if(showTask === 'complete'){
         taskFilter = tasks.filter(t => t.complete == true);
     }else if(showTask === 'incomplete'){
