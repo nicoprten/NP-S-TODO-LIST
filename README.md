@@ -1,10 +1,10 @@
 <h1>NP´S TODO LIST</h1>
 
 <ul>
-  <li>Task list project made with react and sass.</li>
-  <li>It is responsive using sass mixins.</li>
+  <li>Task list project made with <b>React</b> and <b>Sass</b>.</li>
+  <li>It is responsive using <b>Sass</b> mixins.</li>
   <li>You can filter tasks according to their status: <b>complete</b>, <b>incomplete</b> or <b>view all</b>.</li>
-  <li>All your tasks are stored in local storage</li>
+  <li>All your tasks are stored in <b>local storage</b>.</li>
 </ul>
 
 ![image](https://user-images.githubusercontent.com/41525219/169433216-e90aed11-b8b2-40b2-9db5-9dd2db69f3a7.png)
