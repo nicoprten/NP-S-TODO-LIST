@@ -53,3 +53,15 @@
         }
     }
 }
+.error{
+    position: absolute;
+    color: white;
+    background-color: mixin.$red;
+    top: 15em;
+    left: 10em;
+    padding: 1em;
+    @include mixin.tablet{
+        top: 40em;
+        margin: 0 auto;
+    }
+}

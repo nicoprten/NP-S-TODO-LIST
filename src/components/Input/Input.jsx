@@ -5,7 +5,8 @@ import styles from './Input.module.scss';
 export default function Input(){
     const [task, setTask] = useState('');
     const [showTask, setShowTask] = useState('');
-    
+    const [error, setError] = useState('');
+
     // LocalStorage
     const [tasks, setTasks] = useState(getLocalStorage());
     function getLocalStorage(){
@@ -24,11 +25,14 @@ export default function Input(){
 
     function addTask(e, task){
         e.preventDefault();
-        if(task.length > 2){
-            const taskCapitalize = task.charAt(0).toUpperCase() + task.slice(1);
-            let id = task[Math.floor(Math.random() * task.length)] + Math.floor(Math.random() * (task.length * 5));
+        const taskCapitalize = task.charAt(0).toUpperCase() + task.slice(1);
+        if(tasks.filter(t => t.task === taskCapitalize).length == 0){
+            let id = new Date().valueOf();
             setTasks([...tasks, {id, task: taskCapitalize, complete: false}]);
             setTask('');
+            setError('');
+        }else{
+            setError('La tarea ya está agregada.')
         }
     }
     function deleteTask(id){
@@ -56,6 +60,12 @@ export default function Input(){
                     </select>
                 </form>
             </div>
+            {error && 
+                <div className={styles.error}>
+                    <p>{error}</p>
+                </div>
+            }
+
             <Tasks tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} showTask={showTask}/>
         </>
 

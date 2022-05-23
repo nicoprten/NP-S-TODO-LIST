@@ -1,5 +1,4 @@
 import {RadioButtonUnchecked, RadioButtonChecked, Delete} from '@mui/icons-material';
-import { useEffect } from 'react';
 import styles from './Tasks.module.scss';
 
 export default function Tasks({tasks, deleteTask, toggleTask, showTask}){
