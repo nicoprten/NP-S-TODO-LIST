@@ -9,6 +9,10 @@
 
 ![image](https://user-images.githubusercontent.com/41525219/169433216-e90aed11-b8b2-40b2-9db5-9dd2db69f3a7.png)
 
+<p>New functionality added, now you can order your tasks:</p>
+
+![image](https://user-images.githubusercontent.com/41525219/170150634-49375d7c-3062-4235-a81b-63844f04011e.png)
+
 <h3>See you next time!</h3>
 
 ![Gretings](https://media2.giphy.com/media/m0zlbnvpT1t04/giphy.gif?cid=ecf05e47eos18vhzcoykj2iuyaos1x05598xkekzixnem3ky&rid=giphy.gif&ct=g)
