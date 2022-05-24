@@ -7,6 +7,16 @@
     max-height: 30em;
     overflow: auto;
     scrollbar-color: red;
+    .firstTask{
+        text-align: center;
+        font-size: 1.4em;
+        border-bottom: 1px solid mixin.$red;
+        margin-bottom: 1em;
+        padding-bottom: .5em;
+        .spanText{
+            color: mixin.$red;
+        }
+    }
     .containerTask{
         display: flex;
         background-color: mixin.$red;

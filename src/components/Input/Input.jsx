@@ -42,8 +42,29 @@ export default function Input(){
     function toggleTask(id){
         const taskToToggle = tasks.find(t => t.id == id);
         taskToToggle.complete = !taskToToggle.complete;
-        // console.log(taskToToggle)
         setTasks([...tasks]);
+    }
+
+    // Funciones para organizar las tasks
+    function moveDownTask(id){
+        let indexTask = tasks.findIndex((t)=>{
+            return t.id === id;
+        })
+        let newTasks = tasks;
+        let aux = newTasks[indexTask];
+        newTasks[indexTask] = newTasks[indexTask + 1];
+        newTasks[indexTask + 1] = aux;
+        setTasks([...newTasks]);
+    }
+    function moveUpTask(id){
+        let indexTask = tasks.findIndex((t)=>{
+            return t.id === id;
+        })
+        let newTasks = tasks;
+        let aux = newTasks[indexTask];
+        newTasks[indexTask] = newTasks[indexTask - 1];
+        newTasks[indexTask - 1] = aux;
+        setTasks([...newTasks]);
     }
 
     return(
@@ -66,7 +87,7 @@ export default function Input(){
                 </div>
             }
 
-            <Tasks tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} showTask={showTask}/>
+            <Tasks tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask} showTask={showTask} moveDownTask={moveDownTask} moveUpTask={moveUpTask}/>
         </>
 
     )
