@@ -25,10 +25,11 @@ export default function Input(){
 
     function addTask(e, task){
         e.preventDefault();
-        const taskCapitalize = task.charAt(0).toUpperCase() + task.slice(1);
-        if(tasks.filter(t => t.task === taskCapitalize).length == 0){
+        // Pasa todas las tareas al siguiente formato: comER => Comer
+        let taskFix = task.charAt(0).toUpperCase() + task.slice(1).toLowerCase();
+        if(tasks.filter(t => t.task === taskFix).length == 0){
             let id = new Date().valueOf();
-            setTasks([...tasks, {id, task: taskCapitalize, complete: false}]);
+            setTasks([...tasks, {id, task: taskFix, complete: false}]);
             setTask('');
             setError('');
         }else{
